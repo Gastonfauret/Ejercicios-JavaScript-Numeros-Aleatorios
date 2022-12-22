@@ -112,5 +112,25 @@ console.log(compareNumbers(3, 3)); // a y b son iguales
 
 /*Congelar un Objeto */
 /*Esto se usa para que no se pueda modificar un objeto, que no se
-le pueda a
- */
+le pueda añadir o quitar ningun objeto adicional.*/
+
+let colores = {
+    "verde": "#10e04b",
+    "azul": "#1b50e0",
+    "negro": "#000000",
+    "blanco": "#ffffff"
+};
+
+Object.freeze(colores);
+
+// Añadir una propiedad y valor.
+colores.amarillo = "#fff200";
+console.log(colores); // TypeError: Cannot add property amarillo, object is not extensible.
+
+// Cambiar un valor.
+colores.verde = "#345y67g";
+console.log(colores); // TypeError: Cannot assign to read only property 'verde" of object '#<Object>'
+
+// Borrar una propiedad.
+delete colores.verde;
+console.log(colores); // TypeError: Cannot delete property 'verde' of #<Object>
